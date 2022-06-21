@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{%static 'css/main.css'%}">
+    <title>form</title>
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+    {% if submitted %}
+      <h2> Congratulations..!! Your Form Submitted Successfully</h2>
+    {% else %}
+    <form class="btn btn-primary" action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" name="" value="submit">
+    </form>
+    {% endif %}
+  </body>
+</html>
